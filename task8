@@ -5,14 +5,9 @@
 # 3) якщо ім’я відсутнє в словнику оцінок – пропускає його або повертає (name, None) (оберіть один варіант і задокументуйте його в docstring).
 
 def name_score_pairs(names, scores):
-    """
-    Повертає (name, score). Якщо імені нема в словнику — повертає (name, None).
-    """
     for name in names:
         yield (name, scores.get(name, None))
 
-
-# --- Ввід ---
 names = input("Введіть імена через пробіл: ").split()
 import ast
 scores = ast.literal_eval(input("Введіть словник оцінок: "))
