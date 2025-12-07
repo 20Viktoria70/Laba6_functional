@@ -5,14 +5,11 @@
 # 3) Продемонструвати роботу з рядком "abcdef" і k = 3 → "abc", "bcd", "cde", "def".
 
 def substrings(s: str, k: int):
-    """Генерує підрядки довжини k."""
     if k > len(s):
         return
     for i in range(len(s) - k + 1):
         yield s[i:i+k]
 
-
-# --- Ввід ---
 s = input("Введіть рядок: ")
 k = int(input("Введіть довжину підрядка k: "))
 
