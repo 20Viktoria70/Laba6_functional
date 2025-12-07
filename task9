@@ -17,8 +17,6 @@ class KeyFilterIterator:
             if key in self.allowed:
                 return (key, value)
 
-
-# --- Ввід ---
 import ast
 d = ast.literal_eval(input("Введіть словник: "))
 allowed = set(input("Введіть дозволені ключі через пробіл: ").split())
