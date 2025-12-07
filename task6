@@ -1,6 +1,21 @@
-#
-#
-#
-#
-#
-#
+# Завдання 6. Перетворення словника в список кортежів і навпаки
+# Написати дві функції:
+# 1) dict_to_tuples(d: dict) -> list[tuple] повертає список кортежів у форматі (key, value) для кожної пари в словнику.
+# 2) tuples_to_dict(pairs: list[tuple]) -> dict перетворює список кортежів (key, value) назад у словник. Якщо ключ повторюється – останнє значення перезаписує попереднє.
+
+def dict_to_tuples(d):
+    return list(d.items())
+
+def tuples_to_dict(pairs):
+    return {k: v for k, v in pairs}
+
+
+# --- Ввід ---
+import ast
+
+d = ast.literal_eval(input("Введіть словник (наприклад {\"a\":1,\"b\":2}): "))
+
+print("Список кортежів:", dict_to_tuples(d))
+
+pairs = ast.literal_eval(input("Введіть список кортежів: "))
+print("Словник:", tuples_to_dict(pairs))
