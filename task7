@@ -7,8 +7,6 @@
 def filter_dict(d, threshold):
     return {k: v for k, v in d.items() if v > threshold}
 
-
-# --- Ввід ---
 import ast
 d = ast.literal_eval(input("Введіть словник: "))
 t = int(input("Введіть поріг (threshold): "))
