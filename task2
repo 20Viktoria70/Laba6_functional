@@ -18,8 +18,6 @@ class SkipIterator:
         self.index += self.step
         return value
 
-
-# --- Ввід користувача ---
 lst = input("Введіть елементи списку через пробіл: ").split()
 step = int(input("Введіть step: "))
 
