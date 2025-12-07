@@ -1,5 +1,30 @@
-#
-#
-#
-#
-#
+# Завдання 2. Ітератор по списку з пропуском елементів
+# Реалізувати власний клас-ітератор SkipIterator, який:
+# 1) приймає список і ціле число step; 2) при ітерації повертає кожен step-ий елемент списку
+
+class SkipIterator:
+    def __init__(self, data, step):
+        self.data = data
+        self.step = step
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index >= len(self.data):
+            raise StopIteration
+        value = self.data[self.index]
+        self.index += self.step
+        return value
+
+
+# --- Ввід користувача ---
+lst = input("Введіть елементи списку через пробіл: ").split()
+step = int(input("Введіть step: "))
+
+it = SkipIterator(lst, step)
+
+print("Результат ітерації:")
+for x in it:
+    print(x)
