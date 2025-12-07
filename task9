@@ -1,8 +1,29 @@
-#
-#
-#
-#
-#
-#
-#
-#
+# Завдання 9. Ітератор по словнику з фільтрацією ключів
+# Реалізувати клас-ітератор KeyFilterIterator, який: у конструкторі приймає: 1) словник d: dict, 2)множину/список дозволених ключів allowed_keys; 
+# 2) при ітерації повертає кортежі (key, value) тільки для тих ключів, які містяться в allowed_keys і присутні в словнику.
+
+class KeyFilterIterator:
+    def __init__(self, d, allowed):
+        self.d = d
+        self.allowed = allowed
+        self.keys = iter(d.items())
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        while True:
+            key, value = next(self.keys)
+            if key in self.allowed:
+                return (key, value)
+
+
+# --- Ввід ---
+import ast
+d = ast.literal_eval(input("Введіть словник: "))
+allowed = set(input("Введіть дозволені ключі через пробіл: ").split())
+
+it = KeyFilterIterator(d, allowed)
+
+for x in it:
+    print(x)
