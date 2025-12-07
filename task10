@@ -11,8 +11,6 @@ def running_stats(numbers):
         total += x
         yield count, total, total / count
 
-
-# --- Ввід ---
 nums = list(map(float, input("Введіть числа через пробіл: ").split()))
 
 for stat in running_stats(nums):
