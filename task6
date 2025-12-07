@@ -9,8 +9,6 @@ def dict_to_tuples(d):
 def tuples_to_dict(pairs):
     return {k: v for k, v in pairs}
 
-
-# --- Ввід ---
 import ast
 
 d = ast.literal_eval(input("Введіть словник (наприклад {\"a\":1,\"b\":2}): "))
