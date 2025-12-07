@@ -1,7 +1,19 @@
-#
-#
-#
-#
-#
-#
-#
+# Завдання 10. Генератор статистики по списку чисел
+# Написати генераторну функцію running_stats(numbers: list[float]), яка: 1) послідовно проходить по списку чисел;
+# 2) після кожного нового числа x генерує кортеж: (count, current_sum, average), де:
+# count — кількість оброблених елементів, current_sum — сума всіх оброблених елементів, average — поточне середнє значення.
+
+def running_stats(numbers):
+    count = 0
+    total = 0
+    for x in numbers:
+        count += 1
+        total += x
+        yield count, total, total / count
+
+
+# --- Ввід ---
+nums = list(map(float, input("Введіть числа через пробіл: ").split()))
+
+for stat in running_stats(nums):
+    print(stat)
