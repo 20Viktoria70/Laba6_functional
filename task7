@@ -1,7 +1,16 @@
-#
-#
-#
-#
-#
-#
-#
+# Завдання 7. Фільтрація словника за умовою (через генератор/ітератор)
+# Є словник: products = { "apple": 25, "banana": 40, "orange": 30, "kiwi": 55,}
+# Потрібно: написати функцію filter_dict(d: dict[str, int], threshold: int) -> dict[str, int], яка:
+# 1) повертає новий словник тільки з тими елементами, де значення більше threshold;
+# 2) реалізувати фільтрацію через генераторний вираз або через власний генератор, що перебирає .items().
+
+def filter_dict(d, threshold):
+    return {k: v for k, v in d.items() if v > threshold}
+
+
+# --- Ввід ---
+import ast
+d = ast.literal_eval(input("Введіть словник: "))
+t = int(input("Введіть поріг (threshold): "))
+
+print("Відфільтрований словник:", filter_dict(d, t))
