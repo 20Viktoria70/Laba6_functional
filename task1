@@ -1,1 +1,21 @@
+# Завдання 1. Генератор парних чисел у діапазоні
+# Написати генераторну функцію even_in_range(start: int, end: int), яка:  
+# 1) генерує парні числа в діапазоні [start, end] включно; 2) не створює проміжний список, а повертає значення через yield.
 
+def even_in_range(start: int, end: int):
+    """Генерує парні числа в діапазоні [start, end]."""
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            yield num
+
+
+# --- Ввід користувача ---
+start = int(input("Введіть початок діапазону: "))
+end = int(input("Введіть кінець діапазону: "))
+
+print("Через цикл for:")
+for n in even_in_range(start, end):
+    print(n, end=" ")
+
+print("\nЧерез list():")
+print(list(even_in_range(start, end)))
