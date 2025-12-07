@@ -5,14 +5,11 @@
 # 2) використати перебір списку та роботу зі словником (без Counter).
 
 def aggregate_pairs(pairs):
-    """Агрегує однакові ключі в словнику."""
     result = {}
     for key, value in pairs:
         result[key] = result.get(key, 0) + value
     return result
 
-
-# --- Ввід ---
 pairs = []
 n = int(input("Скільки кортежів ввести? "))
 
